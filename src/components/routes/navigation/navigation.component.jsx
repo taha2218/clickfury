@@ -8,10 +8,12 @@ import CartIcon from '../../cart-icon/cart-icon.component';
 import CartDropdown from '../../cart-dropdown/cart-dropdown.component';
 import { CartContext } from '../../../contexts/cart.context';
 import { NavigationContainer, NavLink, NavLinks, LogoContainer } from './navigation.styles';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../../store/user/user.selector';
 
 const Navigation = () => {
 
-    const {currentUser} = useContext(UserContext);
+    const currentUser = useSelector(selectCurrentUser)
 
     const {isCartOpen, setIsCartOpen} = useContext(CartContext);
 
